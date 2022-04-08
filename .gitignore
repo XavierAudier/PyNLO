@@ -54,6 +54,8 @@ build/*
 pyNLO.egg-info/*
 src/pyNLO.egg-info/*
 dist/*
+# IDE folders
+.vscode/
 
 # we should generally ignore images, pdf files, etc. in case those get in somehow:
 *.png
