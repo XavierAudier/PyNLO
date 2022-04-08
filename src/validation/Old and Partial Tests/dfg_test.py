@@ -51,8 +51,8 @@ idlr_power = 0.000
 twind = 25.
 beamwaist = 10e-3
 
-pump_in = CWPulse(pump_power, pump_wl_nm, NPTS = npoints, time_window = twind, offset_from_center_THz = 0.100)
-sgnl_in = CWPulse(sgnl_power, sgnl_wl_nm, NPTS = npoints, time_window = twind)
+pump_in = CWPulse(pump_power, pump_wl_nm, NPTS = npoints, time_window_ps = twind, offset_from_center_THz = 0.100)
+sgnl_in = CWPulse(sgnl_power, sgnl_wl_nm, NPTS = npoints, time_window_ps = twind)
 
 plt.plot(pump_in.wl_nm-pump_wl_nm, abs(pump_in.AW))
 plt.xlim(pump_wl_nm-2,pump_wl_nm+2)
