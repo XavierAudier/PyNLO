@@ -81,7 +81,7 @@ P0 = 0.94 * EPP / t0 # Gaussian pulse
 def fn(x):
     eqn = 0
     for n in xrange(len(betas)):
-       print betas[n] * np.power(x, n+2) / math.factorial(n+2)
+       print(betas[n] * np.power(x, n+2) / math.factorial(n+2))
        eqn += betas[n] * np.power(x, n+2) / math.factorial(n+2)
     eqn -= fiber1.gamma * P0 / 2.0
     return abs(eqn)

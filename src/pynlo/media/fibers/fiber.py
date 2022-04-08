@@ -296,7 +296,7 @@ class FiberInstance:
             slope = np.gradient(B)/np.gradient(pulse.W_THz)
             B = B - slope[center_index] * (pulse.V_THz) - B[center_index]
             
-            # print B
+            # print(B)
             return B
             
         else:
@@ -332,12 +332,12 @@ class FiberInstance:
                                                 )**2))
 
                     scale_factor = minimize(g, 1, method='Powell')
-#                    print 'Power:',pulse.frep * pulse.dt_seconds*\
+#                    print('Power:',pulse.frep * pulse.dt_seconds*\
 #                                        np.trapz(np.abs(
 #                                            IFFT_t( FFT_t(pulse.A) *
 #                                                np.exp(scale_factor.x*gain_spec*self.length/2.0)
 #                                                )
-#                                                )**2)
+#                                                )**2))
                     return gain_spec * scale_factor.x
                 else:
                     return np.ones((pulse.NPTS,)) * self.gain

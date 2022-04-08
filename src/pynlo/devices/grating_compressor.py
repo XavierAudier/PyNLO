@@ -85,7 +85,7 @@ class TreacyCompressor:
 
         alpha = np.arcsin(val )
         if display_angle:
-            print ('diffraction angle = ',alpha * 360.0/(2.0*np.pi) )
+            print(('diffraction angle = ',alpha * 360.0/(2.0*np.pi) ))
         # Then calculate gamma (ok, this is not much work because b = gamma).
         # Calculate theta from {4}:
         theta = self.g-alpha

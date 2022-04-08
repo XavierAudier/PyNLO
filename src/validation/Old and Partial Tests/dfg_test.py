@@ -89,13 +89,13 @@ kappa = np.mean(np.sqrt( 4 * np.mean(crystal.deff)**2 * w_1**2 * w_2**2 / (k_1*k
 
 a = ode_solve.ODEint(integrand.ystart, x0, x1, atol, rtol, h1,hmin, out,\
          dopr853.StepperDopr853, integrand, dtype = np.complex128)
-print 'Running'
+print('Running')
 a.integrate()
-print 'integrated!'
-print 'coupling length is ',1.0/kappa,'m'
-print 'calculated coupling coeff. is ',kappa
+print('integrated!')
+print('coupling length is ',1.0/kappa,'m')
+print('calculated coupling coeff. is ',kappa)
 
-print 'theoretical d idler/dz is ',A_1*A_3*(2*w_2**2*crystal.deff)/(k_2*speed_of_light**2)
+print('theoretical d idler/dz is ',A_1*A_3*(2*w_2**2*crystal.deff)/(k_2*speed_of_light**2))
 
 pump_out = a.out.ysave[0:a.out.count, 0         : npoints].T
 sgnl_out = a.out.ysave[0:a.out.count, npoints   :   2*npoints].T
@@ -112,12 +112,12 @@ idlr_power_out =    np.sum(np.abs(idlr_out[:,-1]))**2
     
 
                         
-print "pump power in: ",    pump_power_in*1000, "mW"                           
-print "signal power in: ",  sgnl_power_in*1000, "mW"                           
-print "idler power in: ",   idlr_power_in*1000, "mW"                           
-print "pump power out: ",   pump_power_out*1000, "mW"                           
-print "signal power out: ", sgnl_power_out*1000, "mW"                           
-print "idler power out: ",  idlr_power_out*1000, "mW"    
+print("pump power in: ",    pump_power_in*1000, "mW")                           
+print("signal power in: ",  sgnl_power_in*1000, "mW")                           
+print("idler power in: ",   idlr_power_in*1000, "mW")                           
+print("pump power out: ",   pump_power_out*1000, "mW")                           
+print("signal power out: ", sgnl_power_out*1000, "mW")                           
+print("idler power out: ",  idlr_power_out*1000, "mW")    
 
 plt.figure()
 plt.subplot(211)

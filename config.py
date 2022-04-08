@@ -32,7 +32,7 @@ if on_rtd:
                 return Mock()
 
     MOCK_MODULES = ['pyfftw', 'scipy', 'numpy', 'matplotlib', 'matplotlib.pyplot']
-	print "Mocking ", MOCK_MODULES
+	print("Mocking ", MOCK_MODULES)
     sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
 

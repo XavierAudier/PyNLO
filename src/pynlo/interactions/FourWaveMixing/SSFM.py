@@ -303,7 +303,7 @@ class SSFM:
     #     -1 - Inverse propagation
     #-----------------------------------------------------------------------
     def integrate_over_dz(self,delta_z, direction=1):        
-#        print "Propagate: delta_z",delta_z
+#        print("Propagate: delta_z",delta_z)
         dist = delta_z
         dz = self.dz        
 
@@ -539,7 +539,7 @@ class SSFM:
 
         print ( "Pulse energy after", fiber.fibertype,":", \
               1e9 * pulse_out.calc_epp(), 'nJ' )
-#        print "alpha out:",self.alpha
+#        print("alpha out:",self.alpha)
         self.cleanup()
         return z_positions, AW, AT, pulse_out
     
@@ -602,7 +602,7 @@ class SSFM:
                     g12_stack = np.dstack((g12, g12_stack))
 
 
-        # print g12_stack.shape, g12_stack.transpose().shape
+        # print(g12_stack.shape, g12_stack.transpose().shape)
         g12W = np.abs(np.mean(g12_stack, axis=2))  
         
         return g12W, results   

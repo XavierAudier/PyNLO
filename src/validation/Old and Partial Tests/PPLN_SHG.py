@@ -70,7 +70,7 @@ a = ode_solve.ODEint(integrand.ystart, x0, x1, atol, rtol, h1,hmin, out,\
          dopr853.StepperDopr853, integrand)
 a.integrate()
 
-print 'integrated!'
+print('integrated!')
 
 pump_out = a.out.ysave[0:a.out.count, 0         : npoints].T
 sgnl_out = a.out.ysave[0:a.out.count, npoints   :   2*npoints].T
@@ -90,12 +90,12 @@ signal_power_out = np.round(1e3 * np.trapz(abs(IFFT_t(sgnl_out[:,-1]))**2,
 idler_power_out =  np.round(1e3 * np.trapz(abs(IFFT_t(idlr_out[:,-1]))**2,
                             idlr_in.T) * sgnl_in.frep, decimals = 4)
                             
-print "pump power in: ",    pump_power_in, "mW"                           
-print "signal power in: ",  signal_power_in, "mW"                           
-print "idler power in: ",   idler_power_in, "mW"                           
-print "pump power out: ",   pump_power_out, "mW"                           
-print "signal power out: ", signal_power_out, "mW"                           
-print "idler power out: ",  idler_power_out, "mW"    
+print("pump power in: ",    pump_power_in, "mW"                           )
+print("signal power in: ",  signal_power_in, "mW"                           )
+print("idler power in: ",   idler_power_in, "mW"                           )
+print("pump power out: ",   pump_power_out, "mW"                           )
+print("signal power out: ", signal_power_out, "mW"                           )
+print("idler power out: ",  idler_power_out, "mW"    )
 
 plt.figure()
 for x in xrange(len(pump_out[:,0])):
