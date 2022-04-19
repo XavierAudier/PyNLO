@@ -100,7 +100,7 @@ print('theoretical d idler/dz is ',A_1*A_3*(2*w_2**2*crystal.deff)/(k_2*speed_of
 pump_out = a.out.ysave[0:a.out.count, 0         : npoints].T
 sgnl_out = a.out.ysave[0:a.out.count, npoints   :   2*npoints].T
 idlr_out = a.out.ysave[0:a.out.count, 2*npoints :   3*npoints].T
-z        = a.out.xsave[0:a.out.count]
+z        = np.real(a.out.xsave[0:a.out.count])
 
 pump_power_in =    np.sum(np.abs(pump_out[:,0]))**2
 sgnl_power_in =    np.sum(np.abs(sgnl_out[:,0]))**2
